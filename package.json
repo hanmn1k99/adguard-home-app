@@ -1,24 +1,48 @@
 {
-  "name": "AdGuard Home",
+  "name": "adguard-home",
   "version": "1.0.0",
-  "description": "",
+  "description": "AdGuard Home Control Panel",
   "main": "main.js",
+
   "scripts": {
     "dev": "electron .",
     "build": "electron-builder"
   },
-  "keywords": [],
+
   "author": "MinhHanIT",
   "license": "ISC",
-  "type": "commonjs",
+
   "devDependencies": {
     "electron": "^39.2.7",
-    "electron-builder": "^26.0.12"
+    "electron-builder": "^24.13.3"
   },
+
   "build": {
-    "appId": "dashboard.app",
+    "appId": "com.han.adguard-home",
+    "productName": "AdGuard Home",
+
+    "directories": {
+      "buildResources": "build"
+    },
+
     "win": {
-      "target": "nsis"
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AdGuard Home"
     }
   }
 }
