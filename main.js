@@ -11,7 +11,7 @@ function createWindow() {
     }
   });
 
-  win.loadURL("http://3.27.235.107:8129");
+  win.loadURL("");
 
     win.once("ready-to-show", () => {
     win.maximize();             // ⭐ cửa sổ full màn hình desktop
